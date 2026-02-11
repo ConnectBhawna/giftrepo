@@ -1,12 +1,12 @@
 "use client";
 
 const items = [
-  "BTC Price: 📉 Dropping like crazy",
-  "My Love for You: 📈 Breaking All-Time Highs (ATH)",
-  "ETH Gas: ⛽ FREE when it comes to you",
-  "Commitment Level: 🔒 Mainnet Launch",
-  "Trust Score: ✅ Proof of Stake",
-  "Sentiment: 💕 I'm Bullish on Us",
+  "BTC Price, Dropping like crazy",
+  "My Love for You, Breaking All-Time Highs (ATH)",
+  "ETH Gas, FREE when it comes to you",
+  "Commitment Level, Mainnet Launch",
+  "Trust Score, Proof of Stake",
+  "Sentiment, I'm Bullish on Us💕 ",
 ];
 
 export default function Ticker() {

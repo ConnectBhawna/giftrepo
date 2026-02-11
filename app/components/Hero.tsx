@@ -11,7 +11,7 @@ export default function Hero() {
         transition={{ duration: 0.6 }}
         className="mb-3 text-xs sm:text-sm tracking-widest uppercase text-eth-blue"
       >
-        ● Network Online — Validators: 2 Hearts
+        ● Network Online, Validators: 2 Hearts
       </motion.p>
 
       <motion.h1
@@ -20,9 +20,9 @@ export default function Hero() {
         transition={{ duration: 0.7, delay: 0.15 }}
         className="max-w-2xl text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight"
       >
-        Checking Network Status:{" "}
+        Checking Network Status,{" "}
         <span className="text-bull-pink">Love Protocol</span>{" "}
-        <span className="text-eth-blue">v1.4</span>
+          is Live!
       </motion.h1>
 
       <motion.p

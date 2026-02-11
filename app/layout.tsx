@@ -9,7 +9,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Love Protocol v1.4 — Proof of Love 💕",
+  title: "Have a great day bby💕",
   description:
     "A fully decentralized, rug-proof protocol for proving love on-chain. Will you be the Liquidity Provider to my heart?",
   openGraph: {
