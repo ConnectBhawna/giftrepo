@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg-dark: #0D0D0D;
+  --color-bull-pink: #FF2D95;
+  --color-eth-blue: #4CC1FF;
+  --color-gold: #FFD166;
+  --color-glass-white: rgba(255, 255, 255, 0.06);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #0D0D0D;
+  color: #ededed;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  overflow-x: hidden;
+}
+
+/* ── Glassmorphism card ─────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+}
+
+/* ── Neon glow under pink buttons ───────────────────── */
+.glow-pink {
+  box-shadow: 0 0 32px rgba(255, 45, 149, 0.45), 0 0 80px rgba(255, 45, 149, 0.2);
+}
+
+/* ── Ticker marquee ─────────────────────────────────── */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 22s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+/* ── Candlestick background pattern ─────────────────── */
+.candlestick-bg {
+  background-image:
+    linear-gradient(180deg, rgba(255,45,149,0.06) 0%, transparent 40%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 58px,
+      rgba(76,193,255,0.04) 58px,
+      rgba(76,193,255,0.04) 60px
+    );
+}
+
+/* ── Pixel-heart float animation (gentle bob) ──────── */
+@keyframes float-heart {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.08); }
+}
+.float-heart {
+  animation: float-heart 4s ease-in-out infinite;
+}
+
+/* ── Rising hearts for background ───────────────────── */
+@keyframes rise-heart {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
+}
+.rise-heart {
+  animation: rise-heart var(--duration, 12s) var(--delay, 0s) linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise-heart {
+    animation: none;
+    opacity: 0.25;
+  }
+}
+
+/* ── Focus ring for accessibility ───────────────────── */
+:focus-visible {
+  outline: 2px solid #4CC1FF;
+  outline-offset: 3px;
+}
