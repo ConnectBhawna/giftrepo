@@ -19,17 +19,24 @@ function randomPos(btnW: number, btnH: number) {
 }
 
 /* heart-shaped confetti using canvas-confetti */
-const heartShape = confetti.shapeFromPath({
-  path: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z",
-});
+let heartShape: ReturnType<typeof confetti.shapeFromPath> | null = null;
+function getHeartShape() {
+  if (!heartShape) {
+    heartShape = confetti.shapeFromPath({
+      path: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z",
+    });
+  }
+  return heartShape;
+}
 
 function fireHeartConfetti() {
+  const shape = getHeartShape();
   const colors = ["#FF2D95", "#ff6db8", "#ff85c8", "#FFD166", "#ff4fa8"];
   const defaults = {
     spread: 360,
     ticks: 120,
     zIndex: 100,
-    shapes: [heartShape],
+    shapes: [shape],
     scalar: 1.8,
   };
 

@@ -20,3 +20,4 @@ public/*
 !public/index.html      
 eslintcache/
 next-env.d.ts
+.vercel
